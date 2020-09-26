@@ -1,4 +1,5 @@
 """
+https://www.wolframalpha.com/input/?i=%28x+-+42%29+%5E+2+%2B+sin%28x+-+42%29
 
 Лабораторна робота 1
 
@@ -32,7 +33,7 @@
 При несвоєчасному захисті звіту штраф 5 балів.
 
 """
-from sympy import symbols, sin, diff
+from sympy import symbols, sin, diff, solve
 import matplotlib.pyplot as plt
 import numpy as np
 import math
@@ -130,13 +131,14 @@ def find_result_by_half(a, b, d, eps, f):
 def find_result_by_chord(a, b, d, eps, f):
     solution = []
     for i in ((a, b), (b, d)):
+
         a = i[0]
         b = i[1]
         if f(a) * f(b) < 0:
             x_t = a - ((f(a) * (b - a)) / (f(b) - f(a)))
-
-            while abs(x_t - a) > eps or abs(x_t - b) > eps:
-                if 0 <= abs(f(x_t)) <= eps:
+            x_p = a
+            while abs(x_t - x_p) > eps:
+                if abs(f(x_t)) <= eps ** 2:
                     break
                 elif f(a) * f(x_t) < 0:
                     b = x_t
@@ -147,7 +149,6 @@ def find_result_by_chord(a, b, d, eps, f):
                     break
                 x_p = x_t
                 x_t = a - ((f(a) * (b - a)) / (f(b) - f(a)))
-
             solution.append(x_t)
 
     return solution
@@ -183,32 +184,23 @@ def main():
     g = int(student_id[-1])  # 7
     k = int(student_id[-2])  # 6
 
-    a = 0
+    a = 40
     b = 41.7
-    c = 0
-    d = 50
+    d = 42.5
 
     print("g = {g} | k = {k} ".format(g=g, k=k))
-    """
-    # the solution of expr
-    print("Finding of solution")
-    x = symbols('x')
-
-    # sol1 = solve((x - g * k) ** 2 + sin(x - g * k))
-    # sol2 = solve((k * x - 10 * g) - sin(x - 10 * g / k))
-
-    # print(sol1)
-    # print(sol2)
-    """
 
     # half-method
     print(find_result_by_half(a, b, d, eps, count_f1))
     # print(find_result_by_half(a, b, d, eps, count_f2))
 
     # chord-method
+    print("chord-method")
     print(find_result_by_chord(a, b, d, eps, count_f1))
     # print(find_result_by_chord(a, b, d, eps, count_f2))
 
+    print()
+    print("tangent-method")
     # tangent-method
     print(find_result_by_tangent(a, b, d, eps, count_f1, d_f1, dd_f1))
     # print(find_result_by_tangent(a, b, d, eps, count_f2, d_f2, dd_f2))
@@ -228,3 +220,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# Висновок, що якщо взяти великий відрізок - точність досягається шляхом лініїзації дуже швидко
