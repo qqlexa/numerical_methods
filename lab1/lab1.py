@@ -1,5 +1,3 @@
-# https://www.wolframalpha.com/input/?i=%28x+-+42%29+%5E+2+%2B+sin%28x+-+42%29
-
 from sympy import sin
 import matplotlib.pyplot as plt
 import numpy as np
@@ -31,7 +29,6 @@ def count_phi2(x):
 
 def create_plot(x, y, parameters):
     """
-
     :param x: argument
     :param y: function
     :param parameters: list from [dict(), dict(), dict() .. . . . .]
@@ -105,7 +102,7 @@ def find_result_by_chord(a, b, d, eps, f):
             elif f(x_t) * f(b) < 0:
                 a = x_t
             else:
-                print("solutions not found")
+                print("solution is not found")
                 break
             x_p = x_t
             x_t = a - ((f(a) * (b - a)) / (f(b) - f(a)))
@@ -123,7 +120,6 @@ def find_result_by_tangent(a, b, d, eps, f, f_d, f_dd):
         if f(a) * f_dd(a) > 0:
             x_t = a
         else:
-            # f(b) * f_dd(b) > 0
             x_t = b
 
         x_p = b if x_t == a else a
