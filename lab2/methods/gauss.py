@@ -1,14 +1,22 @@
 # Gauss matrix method
 
 def solve(a, b):
-    # A - matrix
-    # B -
-    # X - array of solutions
+    """
+    :param a: A: matrix
+    :param b: B: matrix (additional)
+    :return:  X: solutions
+    """
+    if isinstance(a, list) and isinstance(b, list):
+        for i in a:
+            if len(i) != len(b):
+                print("Incorrect data")
+                return
+
     x = list()
-    for i, j in zip(a, b):
-        for i2 in i:
-            print(i2, end=" ")
-        print(j)
+    for i in range(len(a)):
+        for j in range(len(a[i])):
+            print(a[i][j], end=" ")
+        print(b[i])
 
     return x
 
