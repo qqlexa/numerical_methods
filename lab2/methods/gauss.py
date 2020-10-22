@@ -1,11 +1,5 @@
 # Gauss matrix method
-
-def print_equation(a, b):
-    for i in range(len(a)):
-        for j in range(len(a[i])):
-            print(a[i][j], end=" ")
-        print(b[i])
-    print()
+import util
 
 
 def find_max_in_array(a, line=-1):
@@ -40,22 +34,40 @@ def solve(a, b):
     """
     :param a: A: matrix
     :param b: B: matrix (additional)
+              C: location rows
     :return:  X: solutions
     """
-    if isinstance(a, list) and isinstance(b, list):
+    n = len(a)
+    if isinstance(a, list) and isinstance(b, list) and n == len(b):
         for i in a:
             if len(i) != len(b):
                 print("Incorrect data")
                 return
+    else:
+        return
+
+    c = util.create_matrix(n)
 
     x = list()
-    print_equation(a, b)
+    util.print_equation(a, b)
 
     pos = find_max_in_array(a, 0)
+    if pos[0] != pos[1]:
+        # main element is not in main diagonal
+        j1 = pos[1]
+        if pos[]
+        if n > pos[1] + 1:
+            j2 = pos[1] + 1
+        else:
+            j2 = pos[1] - 1
+        for i in range(n):
+            if n > pos[1] + 1:
+                a[pos[0]][pos[1]], a[pos[0]][pos[1] + 1] = a[pos[0]][pos[1] + 1], a[pos[0]][pos[1]]
+            else:
     print(pos)
     print(a[pos[0]][pos[1]])
 
-    print_equation(a, b)
+    util.print_equation(a, b)
 
     return x
 
