@@ -60,6 +60,8 @@ def solve(a, b):
             c[i][pos[0]], c[i][pos[1]] = c[i][pos[1]], c[i][pos[0]]
     util.print_matrix(c)
 
+    util.print_matrix_with_c(a, c)
+
     util.print_equation(a, b)
 
     return x
