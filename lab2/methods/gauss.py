@@ -52,20 +52,13 @@ def solve(a, b):
     util.print_equation(a, b)
 
     pos = find_max_in_array(a, 0)
-    if pos[0] != pos[1]:
-        # main element is not in main diagonal
-        j1 = pos[1]
-        if pos[]
-        if n > pos[1] + 1:
-            j2 = pos[1] + 1
-        else:
-            j2 = pos[1] - 1
-        for i in range(n):
-            if n > pos[1] + 1:
-                a[pos[0]][pos[1]], a[pos[0]][pos[1] + 1] = a[pos[0]][pos[1] + 1], a[pos[0]][pos[1]]
-            else:
     print(pos)
     print(a[pos[0]][pos[1]])
+    if pos[0] != pos[1]:
+        # main element is not in main diagonal
+        for i in range(n):
+            c[i][pos[0]], c[i][pos[1]] = c[i][pos[1]], c[i][pos[0]]
+    util.print_matrix(c)
 
     util.print_equation(a, b)
 
