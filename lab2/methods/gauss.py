@@ -29,8 +29,8 @@ def solve(a, b):
     """
     :param a: A: matrix
     :param b: B: matrix (additional)
-              C: location rows
-    :return:  X: solutions
+              C: vector location of columns
+    :return:  X: vector of solutions
     """
     n = len(a)
     if isinstance(a, list) and isinstance(b, list) and n == len(b):
@@ -42,43 +42,25 @@ def solve(a, b):
         return
 
     c = matrix.create_vector(n)
-    x = list()
+    x = matrix.create_vector(n, 0)
     util.print_equation(a, b)
-    matrix.print_vector(c)
-    matrix.print_matrix_with_c(a, c)
+
     for i in range(len(a) - 1):
-        print("New")
         max_i, max_j = find_max_in_array(a, c, i)
-        print((max_i, max_j))
-        print(a[max_i][max_j])
         if max_i != max_j:
             # main element is not in main diagonal
             c[max_i], c[max_j] = c[max_j], c[max_i]
-            matrix.print_vector(c)
-            print("h")
-        print('If a[i][c[i]] != 0')
+
         if a[i][c[i]] != 0:
             m = a[i + 1][c[i]] / a[i][c[i]]
-            print(f"m is {m}")
             matrix.mul_row(a, c, i, m)
             b[i] *= m
-            matrix.print_matrix_with_c(a, c)
             for i2 in range(i + 1, len(a)):
-                print("- - - -")
                 matrix.row_minus_row(a, c, i, i2)
                 b[i2] -= b[i]
-            matrix.print_matrix_with_c(a, c)
         util.print_equation_with_c(a, c, b)
 
-    print()
-    print("Back")
-    print()
-
     for i in range(len(a) - 1, 0, -1):
-        print(f"i = {i}")
-        print("New 2")
-
-        print('If a[i][c[i]] != 0')
         if a[i][c[i]] != 0:
             m = a[i - 1][c[i]] / a[i][c[i]]
             print(f"m is {m}")
@@ -90,11 +72,31 @@ def solve(a, b):
                 matrix.row_minus_row(a, c, i, i2)
                 b[i2] -= b[i]
             matrix.print_matrix_with_c(a, c)
+        else:
+            print(f"a[{i}][{c[i]}] == 0")
         util.print_equation_with_c(a, c, b)
 
     util.print_equation(a, b)
 
+    is_number = 1
+    for i in range(len(a)):
+        solutions = list()
+        solution_j = 0
+        if is_number:
+            for j in range(len(a)):
+                if a[i][j] != 0:
+                    solutions.append(a[i][j])
+                    solution_j = j
+
+            if len(solutions) > 1:
+                print("Solution is not correct")
+            else:
+                x[solution_j] = b[i] / solutions[0]
+
+        else:
+            print("There is not solution")
+    print(x)
     return x
 
 
-solve([[2, 4], [3, 1]], [1, 1])
+solve([[20, 10], [17, 22]], [350, 500])
