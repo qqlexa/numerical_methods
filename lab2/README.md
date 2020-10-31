@@ -4,13 +4,13 @@
 
 Розробити алгоритми та програмне забезпечення для розв’язку наведеної задачі вказаними методами. Алгоритми представити у вигляді блок-схем або діаграм діяльності UML. Програмне забезпечення розробити на будь-якій сучасній мові програмування. Знайти точне значення розв’язку задачі за допомогою математичних бібліотек та порівняти його зі значеннями, отриманими в результаті роботи розробленого програмного забезпечення. Реалізація методів у завданні 1 має бути універсальною, для довільної розмірності системи.
 1.	Знайти розв’язок СЛАР методами Гауса, Крамера, оберненої матриці: 
-<img src="https://github.com/qqlexa/kpi_labs/blob/main/numerical_methods/src/main/resourses/1.jpg">
+<img src="https://github.com/qqlexa/numerical_methods/blob/master/lab2/src/main/resourses/1.jpg">
 де g – остання цифра у номері студентського квитка, а k – передостання.
 2.	Знайти з точністю 0,01 розв’язок СЛАР методом простої ітерації:
-<img src="https://github.com/qqlexa/kpi_labs/blob/main/numerical_methods/src/main/resourses/2.jpg">
+<img src="https://github.com/qqlexa/numerical_methods/blob/master/lab2/src/main/resourses/2.jpg">
 де g – остання цифра у номері студентського квитка, а k – передостання.
 3.	Знайти з точністю 0,01 розв’язок системи нелінійних рівнянь методами Ньютона та Зейделя:
-<img src="https://github.com/qqlexa/kpi_labs/blob/main/numerical_methods/src/main/resourses/3.jpg">
+<img src="https://github.com/qqlexa/numerical_methods/blob/master/lab2/src/main/resourses/3.jpg">
 де g – остання цифра у номері студентського квитка, а k – передостання. Для пошуку початкового наближення використати побудову графіків рівнянь.
 
 Звіт з завдання має містити:
