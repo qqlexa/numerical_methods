@@ -6,9 +6,11 @@
 1.	Знайти розв’язок СЛАР методами Гауса, Крамера, оберненої матриці: 
 <img src="https://github.com/qqlexa/numerical_methods/blob/master/lab2/src/main/resourses/1.jpg">
 де g – остання цифра у номері студентського квитка, а k – передостання.
+
 2.	Знайти з точністю 0,01 розв’язок СЛАР методом простої ітерації:
 <img src="https://github.com/qqlexa/numerical_methods/blob/master/lab2/src/main/resourses/2.jpg">
 де g – остання цифра у номері студентського квитка, а k – передостання.
+
 3.	Знайти з точністю 0,01 розв’язок системи нелінійних рівнянь методами Ньютона та Зейделя:
 <img src="https://github.com/qqlexa/numerical_methods/blob/master/lab2/src/main/resourses/3.jpg">
 де g – остання цифра у номері студентського квитка, а k – передостання. Для пошуку початкового наближення використати побудову графіків рівнянь.
