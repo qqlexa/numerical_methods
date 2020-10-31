@@ -1,2 +1,0 @@
-# Cramer method
-

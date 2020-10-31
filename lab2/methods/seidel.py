@@ -1,2 +1,0 @@
-# Seidel method
-
