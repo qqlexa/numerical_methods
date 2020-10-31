@@ -29,7 +29,7 @@ def count_array(a, b, i, i2):
 
 def solve(a, b):
     """
-    :param a: a: matrix
+    :param a: a: matrix, REQUIREMENT: rang(a) should be == n
     :param b: b: matrix (additional)
     :return:  x: vector of solutions
     """
