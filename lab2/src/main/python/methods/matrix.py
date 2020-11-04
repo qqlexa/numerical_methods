@@ -8,6 +8,12 @@ def create_vector(n, number=-1):
     return c
 
 
+def print_vector(c):
+    for i in c:
+        print(i, end=" ")
+    print()
+
+
 def is_square_matrix(a):
     if not isinstance(a, list) and not isinstance(a, tuple):
         print("Error. Matrix is not list() or tuple()")
@@ -22,12 +28,6 @@ def is_square_matrix(a):
         return False
 
     return len(a) == len(a[0])
-
-
-def print_vector(c):
-    for i in c:
-        print(i, end=" ")
-    print()
 
 
 def create_matrix(n):
