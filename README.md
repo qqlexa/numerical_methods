@@ -4,7 +4,7 @@
     <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab1>lab1</a>
     <ul>
       <li>
-        <a href=https://github.com/qqlexa/kpi_labs/blob/main/oop/lab1/lab1.cpp>lab1.cpp</a>
+        <a href=https://github.com/qqlexa/numerical_methods/blob/master/lab1/lab1.py>lab1.py</a>
       </li>
     </ul>
   </li>
@@ -14,41 +14,7 @@
         <li>
           <a href=https://github.com/qqlexa/kpi_labs/blob/main/oop/lab2/lab2.cpp>lab2.cpp</a>
         </li>
-        <li>
-          <a href=https://github.com/qqlexa/kpi_labs/blob/main/oop/lab2/Product.h>Product.h</a>
-        </li>
-        <li>
-          <a href=https://github.com/qqlexa/kpi_labs/blob/main/oop/lab2/Product.cpp>Product.cpp</a>
-        </li>
-      </ul>
-  </li>
-  <li>
-    <a href=https://github.com/qqlexa/kpi_labs/blob/main/oop/lab3>lab3</a>
-    <ul>
-        <li>
-          <a href=https://github.com/qqlexa/kpi_labs/blob/main/oop/lab3/lab3.cpp>lab3.cpp</a>
-        </li>
-        <li>
-          <a href=https://github.com/qqlexa/kpi_labs/blob/main/oop/lab3/Product.h>Product.h</a>
-        </li>
-        <li>
-          <a href=https://github.com/qqlexa/kpi_labs/blob/main/oop/lab3/Product.cpp>Product.cpp</a>
-        </li>
-      </ul>
-  </li>
-  <li>
-    <a href=https://github.com/qqlexa/kpi_labs/blob/main/oop/lab4>lab4</a>
-    <ul>
-        <li>
-          <a href=https://github.com/qqlexa/kpi_labs/blob/main/oop/lab4/lab4.cpp>lab4.cpp</a>
-        </li>
-        <li>
-          <a href=https://github.com/qqlexa/kpi_labs/blob/main/oop/lab4/Product.h>Product.h</a>
-        </li>
-        <li>
-          <a href=https://github.com/qqlexa/kpi_labs/blob/main/oop/lab4/Product.cpp>Product.cpp</a>
-        </li>
-      </ul>
+     </ul>
   </li>
 </ul>
 
