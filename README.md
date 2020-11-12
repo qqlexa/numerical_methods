@@ -15,10 +15,10 @@
           <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab2/src/main>/src/main/</a>
           <ul>
             <li>
-              <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab2/src/main/python>/src/main/python/</a>
+              <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab2/src/main/python>python/</a>
             </li>
             <li>
-              <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab2/src/main/resourses>/src/main/resourses/</a>
+              <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab2/src/main/resourses>resourses/</a>
             </li>
          </ul>
         </li>
