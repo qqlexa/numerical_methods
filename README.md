@@ -12,7 +12,15 @@
     <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab2>lab2</a>
     <ul>
         <li>
-          <a href=https://github.com/qqlexa/kpi_labs/blob/main/oop/lab2/lab2.cpp>lab2.cpp</a>
+          <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab2/src/main>/src/main/</a>
+          <ul>
+            <li>
+              <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab2/src/main/python>/src/main/python/</a>
+            </li>
+            <li>
+              <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab2/src/main/resourses>/src/main/resourses/</a>
+            </li>
+         </ul>
         </li>
      </ul>
   </li>
