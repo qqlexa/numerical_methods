@@ -20,7 +20,7 @@ def solve(functions, eps=0.01, begin_positions=()):
     solutions = [i for i in prev_solutions]
 
     is_found = False
-    steps = 0
+    iterations = 0
     while not is_found:
         is_found = True
         for f in range(len(functions)):
@@ -36,6 +36,5 @@ def solve(functions, eps=0.01, begin_positions=()):
                 is_found = False
                 break
 
-        steps += 1
-        print(solutions)
-    print(steps)
+        iterations += 1
+    return solutions, iterations
