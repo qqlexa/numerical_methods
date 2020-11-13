@@ -1,6 +1,4 @@
 # Seidel method
-import math
-
 try:
     import util
     import matrix
@@ -24,9 +22,7 @@ def solve(functions, eps=0.01, begin_positions=()):
     while not is_found:
         is_found = True
         for f in range(len(functions)):
-            args = list()
-            for i in range(f):
-                args.append(prev_solutions[i])
+            args = [prev_solutions[i] for i in range(f)]
             for i in range(f, len(functions)):
                 args.append(solutions[i])
             solutions[f] = functions[f](args)
