@@ -29,26 +29,23 @@ def count_array(a, b, i, i2):
 
 def solve(a, b):
     """
-    :param a: a: matrix, REQUIREMENT: rang(a) should be == n
-    :param b: b: matrix (additional)
-    :return:  x: vector of solutions
+    :param a:  a: matrix, REQUIREMENT: rang(a) should be == n
+    :param b:  b: matrix (additional)
+    :return x: x: vector of solutions
     """
     n = len(a)
-    if isinstance(a, list) and isinstance(b, list) and n == len(b):
-        for i in a:
-            if len(i) != len(b):
-                print("Incorrect data")
-                return
-    else:
-        return
+    if not matrix.is_square_matrix(a):
+        print("It is not possible to find solutions")
+        return False
 
-    x = matrix.create_vector(n, 0)
+    x = [0 for i in range(n)]
     util.print_equation(a, b)
 
     for i in range(n):
         for i2 in range(i + 1, n):
             count_array(a, b, i, i2)
         # util.print_equation(a, b)
+    # util.print_equation(a, b)
 
     for i in range(n - 1, -1, -1):
         for i2 in range(i - 1, -1, -1):
@@ -59,11 +56,7 @@ def solve(a, b):
         if a[i][i] != 0:
             x[i] = b[i] / a[i][i]
         else:
-            print(f"Error! a[{i}][{i}] == 0")
+            # print(f"Error! a[{i}][{i}] == 0")
             return False
-    print(x)
+
     return x
-
-
-if __name__ == '__main__':
-    solve([[20, 10], [17, 22]], [350, 500])

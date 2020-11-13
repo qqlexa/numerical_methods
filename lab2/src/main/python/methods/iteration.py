@@ -41,11 +41,11 @@ def solve(a, b, eps):
         print("It is not possible to find solutions")
         return False
 
-    x = matrix.create_vector(n, 0)
+    x = [0 for i in range(n)]
     for j in range(n):
         x[j] = round(b[j] / a[j][j], 3)
 
-    prev_x = matrix.create_vector(n, 1)
+    prev_x = [1 for i in range(n)]
 
     util.print_equation(a, b)
 
@@ -65,30 +65,3 @@ def solve(a, b, eps):
         iterations += 1
 
     return x, iterations
-
-
-eps = 0.0001
-student_id = "12648067"
-g = int(student_id[-1])  # 7
-k = int(student_id[-2])  # 6
-
-# eq = [[g + 1, g + 2, g + 3], [2 * (g + 1), g + 6, g - 5], [3 * (g + 1), g, -3]]
-# eqAd = [k, k + 1, k + 2]
-
-eq = [[24, 14, -8.1], [16, 26, 5.4], [8, 18, 27]]
-eqAd = [8, 7, 6]
-coefficient = [1, 2, 2.7]
-
-x, iterations = solve(eq, eqAd, eps)
-for i in range(len(x)):
-    x[i] *= coefficient[i]
-
-print(x)
-
-"""eps = 0.01
- eq = [[20.9, 1.2, 2.1, 0.9], [1.2, 21.2, 1.5, 2.5], [2.1, 1.5, 19.8, 1.3], [0.9, 2.5, 1.3, 32.1]]
- eqAd = [21.7, 27.46, 28.76, 49.72]
-
-x = solve(eq, eqAd, eps)
-print(x)
-"""

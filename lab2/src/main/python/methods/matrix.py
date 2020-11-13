@@ -1,17 +1,5 @@
-def create_vector(n, number=-1):
-    c = list()
-    for i in range(n):
-        if number < 0:
-            c.append(i)
-        else:
-            c.append(number)
-    return c
-
-
-def print_vector(c):
-    for i in c:
-        print(i, end=" ")
-    print()
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def is_square_matrix(a):
