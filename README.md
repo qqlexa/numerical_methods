@@ -18,7 +18,7 @@
               <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab2/src/main/python>python/</a>
               <ul>
               <li>
-              <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab2/src/main/python/methods>/methods//</a>
+              <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab2/src/main/python/methods>/methods/</a>
              </li>
              </ul>
             </li>
