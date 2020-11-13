@@ -12,23 +12,6 @@ except:
         pass
 
 
-def count_array(a, b, i, i2):
-    if a[i][i] != 0:
-        if a[i2][i] != 0:
-            number = float(a[i2][i] / a[i][i])
-            matrix.mul_row(a, i, number)
-            b[i] *= number
-            # util.print_equation(a, b)
-            matrix.row_minus_row(a, from_i=i2, minus_i=i)
-            b[i2] -= b[i]
-        else:
-            # print(f"a[{i2}][{i}] == 0")
-            pass
-    else:
-        # print(f"a[{i}][{i}] == 0")
-        pass
-
-
 def solve(a, b, eps=0.01):
     """
     :param a:   matrix, REQUIREMENT: rang(a) should be == n
