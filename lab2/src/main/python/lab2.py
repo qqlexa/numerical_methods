@@ -1,5 +1,7 @@
-import numpy as np
 import math
+from scipy.optimize import fsolve
+import numpy as np
+from colorama import Fore
 
 from methods import util
 
@@ -48,6 +50,17 @@ matrix, n = read_maxtrix()
 matrix_additional, n = read_vector()
 util.print_equation(matrix, matrix_additional)
 
+
+def count_formula(z):
+    return [matrix[0][0]*z[0] + matrix[0][1]*z[1] + matrix[0][2]*z[2] - matrix_additional[0],
+            matrix[1][0]*z[0] + matrix[1][1]*z[1] + matrix[1][2]*z[2] - matrix_additional[1],
+            matrix[2][0]*z[0] + matrix[2][1]*z[1] + matrix[2][2]*z[2] - matrix_additional[2]]
+
+
+zGuess = np.array([0, 0, 0])
+z = fsolve(count_formula, zGuess)
+print(Fore.LIGHTCYAN_EX + f"{z}" + Fore.RESET)
+
 print("1.")
 eq = copy_matrix(matrix)
 eqAd = copy_vector(matrix_additional)
@@ -78,6 +91,10 @@ print(x)
 
 print("3.")
 
+student_id = "12648067"
+g = int(student_id[-1])  # 7
+k = int(student_id[-2])  # 6
+
 
 def count_f1(args):
     return (28 + math.sin(7*args[0] + args[1] - 28) / 10) / 7
@@ -85,14 +102,6 @@ def count_f1(args):
 
 def count_f2(args):
     return math.sin(7*args[0] + args[1] - 28)/80
-
-
-x, iterations = seidel.solve((count_f1, count_f2), eps=0.01, begin_positions=[0, 0])
-print(f"Seidel's method: {x} in {iterations} iterations")
-
-student_id = "12648067"
-g = int(student_id[-1])  # 7
-k = int(student_id[-2])  # 6
 
 
 def f1(args):
@@ -117,6 +126,18 @@ def dx_f2(args):
 
 def dy_f2(args):
     return 1 - math.cos((k+1)*args[0] + args[1] - 4*g)/(10 * (g+1))
+
+
+def count_formula(z):
+    return [f1(z), f2(z)]
+
+
+zGuess = np.array([0, 0])
+z = fsolve(count_formula, zGuess)
+print(Fore.LIGHTCYAN_EX + f"{z}" + Fore.RESET)
+
+x, iterations = seidel.solve((count_f1, count_f2), eps=0.01, begin_positions=[0, 0])
+print(f"Seidel's method: {x} in {iterations} iterations")
 
 
 x, iterations = newton.solve([f1, f2],
