@@ -1,9 +1,12 @@
 import numpy as np
+import math
+
 from methods import gauss
 from methods import cramer
 from methods import inverse_matrix
 from methods import iteration
 from methods import seidel
+from methods import newton
 
 
 def read_maxtrix(file_name="INPUT.txt"):
@@ -89,4 +92,37 @@ def count_f2(args):
     return math.sin(7*args[0] + args[1] - 28)/80
 
 
-solve((count_f1, count_f2), eps=0.01, begin_positions=[0, 0])
+seidel.solve((count_f1, count_f2), eps=0.01, begin_positions=[0, 0])
+
+
+student_id = "12648067"
+g = int(student_id[-1])  # 7
+k = int(student_id[-2])  # 6
+
+
+def f1(x):
+    return (k+1)*x[0] - 4*g + math.sin((k+1)*x[0] + x[1] - 4*g)/10
+
+
+def f2(x):
+    return x[1] - math.sin((k+1)*x[0] + x[1] - 4*g)/(10*(g+1))
+
+
+def dx_f1(x):
+    return (k+1) + (k+1) * math.cos((k + 1)*x[0] + x[1] - 4*g)/10
+
+
+def dy_f1(x):
+    return math.cos((k + 1) * x[0] + x[1] - 4 * g)/10
+
+
+def dx_f2(x):
+    return - (k+1) * math.cos((k+1)*x[0] + x[1] - 4*g)/(10 * (g+1))
+
+
+def dy_f2(x):
+    return 1 - math.cos((k+1)*x[0] + x[1] - 4*g)/(10 * (g+1))
+
+
+newton.solve([f1, f2], [[dx_f1, dy_f1], [dx_f2, dy_f2]], eps=0.01, begin_positions=[4.1, 0.2])
+
