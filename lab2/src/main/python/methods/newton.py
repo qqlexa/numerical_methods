@@ -38,6 +38,4 @@ def solve(functions, derivative_functions, eps=0.01, begin_positions=()):
 
         iterations += 1
 
-    print(x)
-    print(iterations)
     return x, iterations

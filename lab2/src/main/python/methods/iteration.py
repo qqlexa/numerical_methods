@@ -29,7 +29,7 @@ def count_array(a, b, i, i2):
         pass
 
 
-def solve(a, b, eps):
+def solve(a, b, eps=0.01):
     """
     :param a:   matrix, REQUIREMENT: rang(a) should be == n
     :param b:   matrix (additional)
@@ -46,8 +46,6 @@ def solve(a, b, eps):
         x[j] = round(b[j] / a[j][j], 3)
 
     prev_x = [1 for i in range(n)]
-
-    util.print_equation(a, b)
 
     is_found = False
     iterations = 1

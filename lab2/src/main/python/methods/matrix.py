@@ -1,7 +1,3 @@
-import matplotlib.pyplot as plt
-import numpy as np
-
-
 def is_square_matrix(a):
     if not isinstance(a, list) and not isinstance(a, tuple):
         print("Error. Matrix is not list() or tuple()")
@@ -16,16 +12,6 @@ def is_square_matrix(a):
         return False
 
     return len(a) == len(a[0])
-
-
-def create_matrix(n):
-    c = list()
-    for _ in range(n):
-        x = list()
-        for j in range(n):
-            x.append(j)
-        c.append(x)
-    return c
 
 
 def print_matrix(a):
@@ -67,21 +53,19 @@ def find_union_matrix(a):
         print("It is not possible to find union matrix. Determinant equals 0")
         return False
 
-    b = create_matrix(len(a))
+    b = [[j for j in range(len(a))] for i in range(len(a))]
     for i in range(len(a)):
         for j in range(len(a)):
             sign = -1 if (i + j) % 2 else 1
             b[i][j] = sign * find_det(cut_row_and_column(a, i, j))
-
     return b
 
 
 def transpose_matrix(a):
-    b = create_matrix(len(a))
+    b = [[j for j in range(len(a))] for i in range(len(a))]
     for i in range(len(a)):
         for j in range(len(a)):
             b[i][j] = a[j][i]
-
     return b
 
 
@@ -99,5 +83,4 @@ def find_det(a):
         for i in range(len(a)):
             sign = -1 if i % 2 else 1
             result += sign * a[i][0] * find_det(cut_row_and_column(a, i, 0))
-    # print(f"result {result}")
     return result

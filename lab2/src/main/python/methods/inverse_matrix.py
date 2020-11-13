@@ -28,7 +28,6 @@ def solve(a, b):
         return False
 
     x = [0 for i in range(n)]
-    util.print_equation(a, b)
 
     union_matrix = matrix.find_union_matrix(a)
     union_matrix = matrix.transpose_matrix(union_matrix)

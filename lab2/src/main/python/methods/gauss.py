@@ -39,18 +39,14 @@ def solve(a, b):
         return False
 
     x = [0 for i in range(n)]
-    util.print_equation(a, b)
 
     for i in range(n):
         for i2 in range(i + 1, n):
             count_array(a, b, i, i2)
-        # util.print_equation(a, b)
-    # util.print_equation(a, b)
 
     for i in range(n - 1, -1, -1):
         for i2 in range(i - 1, -1, -1):
             count_array(a, b, i, i2)
-        # util.print_equation(a, b)
 
     for i in range(n):
         if a[i][i] != 0:

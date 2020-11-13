@@ -28,9 +28,8 @@ def solve(a, b):
         return False
 
     x = [0 for i in range(n)]
-    util.print_equation(a, b)
 
-    new_matrix = matrix.create_matrix(n)
+    new_matrix = [[j for j in range(n)] for i in range(n)]
 
     for k in range(n):
         for i in range(n):
