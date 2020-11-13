@@ -68,11 +68,12 @@ def dy_f1(x):
 
 
 def dx_f2(x):
-    return - (k + 1) * math.cos((k + 1) * x[0] + x[1] - 4 * g)/(10 * (g + 1))
+    return - (k+1) * math.cos((k+1)*x[0] + x[1] - 4*g)/(10 * (g+1))
 
 
 def dy_f2(x):
-    return (1 - math.cos((k + 1) * x[0] + x[1] - 4 * g))/(10 * (g + 1))
+    return 1 - math.cos((k+1)*x[0] + x[1] - 4*g)/(10 * (g+1))
+
 """
 
 # Похідна першої функції по x
@@ -100,4 +101,4 @@ def df2_dy(x):
 """
 
 
-solve([f1, f2], [[df1_dx, df1_dy], [df2_dx, df2_dy]], eps=0.01, begin_positions=[1, 1])
+solve([f1, f2], [[dx_f1, dy_f1], [dx_f2, dy_f2]], eps=0.01, begin_positions=[1, 1])
