@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'matrix/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'matrix/mfenced.css' %}">
+    <title>Result</title>
+</head>
+<body>
+    <dev>
+        <p>Отримана матриця A, та значення вектору B:</p>
+        <mfenced open="(" close=")">
+            <mtable columnlines="{{ columnlines_ }}">
+                {% for row in matrix_all%}
+                    <mtr>
+                        {% for element in row%}
+                            <mtd>{{ element }}</mtd>
+                        {% endfor %}
+                    </mtr>
+                {% endfor %}
+            </mtable>
+        </mfenced>
+    </dev>
+
+    <br><br>
+    <dev>
+        <p>Для знаходження матриці розв'язків (X) застосуємо метод оберненої матриці, який каже:</p>
+        <ul>
+          <li>AX = B</li>
+          Отримуємо, що:
+          <li>X = A<sup>-1</sup>x B</li>
+        </ul>
+    </dev>
+    <dev>
+        <p>Для знаходження оберненої матриці застосуємо спосіб, який заснований на методі Крамера:</p>
+        <ul>
+          <li>Знаходимо визначник вихідної матриці A</li>
+          <li>Складаємо матрицю алгебраїчних доповнень, записавши на місце кожного елемента вихідної матриці його алгебраїчне доповнення</li>
+          <li>Розділити матрицю алгебраїчних доповнень на визначник вихідної матриці, після чого транспонувати</li>
+        </ul>
+    </dev>
+    <br>
+    <dev>
+        <p>Знаходимо визначник вихідної матриці A:</p>
+        det(A) = {{ det }}
+    </dev>
+
+    <br>
+    <br>
+    <dev>
+        <p>Знаходимо матрицю алгебраїчних доповнень:</p>
+        C<sup>*</sup>=
+        <mfenced open="(" close=")">
+            <mtable>
+                {% for row in union_matrix%}
+                    <mtr>
+                        {% for element in row%}
+                            <mtd>{{ element }}</mtd>
+                        {% endfor %}
+                    </mtr>
+                {% endfor %}
+            </mtable>
+        </mfenced>
+    </dev>
+
+    <dev>
+        <p>Транспонуємо матрицю алгебраїчних доповнень:</p>
+        C<sup>*T</sup>=
+        <mfenced open="(" close=")">
+            <mtable>
+                {% for row in trans_matrix%}
+                    <mtr>
+                        {% for element in row%}
+                            <mtd>{{ element }}</mtd>
+                        {% endfor %}
+                    </mtr>
+                {% endfor %}
+            </mtable>
+        </mfenced>
+    </dev>
+    <dev>
+        <p>Ділимо матрицю алгебраїчних доповнень на визначник:</p>
+        A<sup>-1</sup>= <mfrac><mn>C<sup>*T</sup></mn><mn>det(A)</mn></mfrac> =
+        <mfenced open="(" close=")">
+            <mtable>
+                {% for row in inv_matrix%}
+                    <mtr>
+                        {% for element in row%}
+                            <mtd>{{ element }}</mtd>
+                        {% endfor %}
+                    </mtr>
+                {% endfor %}
+            </mtable>
+        </mfenced>
+    </dev>
+    <dev>
+        <p>Знаходимо рішення:</p>
+        X = A<sup>-1</sup> * B =
+        <mfenced open="(" close=")">
+            <mtable>
+                {% for row in inv_matrix%}
+                    <mtr>
+                        {% for element in row%}
+                            <mtd>{{ element }}</mtd>
+                        {% endfor %}
+                    </mtr>
+                {% endfor %}
+            </mtable>
+        </mfenced>
+        x
+        <mfenced open="(" close=")">
+            <mtable>
+                {% for element in matrix_b%}
+                    <mtr><mtd>{{ element }}</mtd></mtr>
+                {% endfor %}
+            </mtable>
+        </mfenced>
+        <br>
+        X =
+        <mfenced open="(" close=")">
+            <mtable>
+                {% for element in solve%}
+                    <mtr><mtd>{{ element }}</mtd></mtr>
+                {% endfor %}
+            </mtable>
+        </mfenced>
+    </dev>
+
+</body>
+</html>
