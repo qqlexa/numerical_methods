@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'matrix/style.css' %}">
+    <title>Enter numbers</title>
+</head>
+<body>
+    <h1>Entered size: {{ size }}</h1>
+    <form method="post">
+        <! -- action="/count/" -->
+        {% csrf_token %}
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    {% for i in size1_array %}
+                        <th>X{{ i }}</th>
+                    {% endfor %}
+                    <th>B</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in size0_array %}
+                    <tr>
+                    {% for j in size0_array %}
+                        <td><input type="number" step="0.01" id="row-a" name="row-a-{{i}}-{{j}}" value=0></td>
+                    {% endfor %}
+                    <td><input type="number" step="0.01" id="row-b" name="row-b-{{i}}" value=0></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    {% for i in size1_array %}
+                        <th>X{{ i }}</th>
+                    {% endfor %}
+                    <th>B</th>
+                </tr>
+            </tfoot>
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
