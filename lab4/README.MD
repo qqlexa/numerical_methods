@@ -57,3 +57,11 @@
 <p>Захист&nbsp;&nbsp;&nbsp; звіту&nbsp;&nbsp;&nbsp; передбачає&nbsp;&nbsp;&nbsp; також&nbsp;&nbsp;&nbsp; опитування&nbsp;&nbsp;&nbsp; з&nbsp;&nbsp;&nbsp; теоретичних&nbsp;&nbsp;&nbsp; питань&nbsp;&nbsp;&nbsp; щодо застосованих методів та засобів.</p>
 <p>Максимальна оцінка за роботу &ndash; 10 балів.</p>
 <p>При несвоєчасному захисті звіту штраф 5 балів.</p>
+
+g 2k
+(x3  x)dx
+g 2k 3
+
+&int;
+&int;
+&int;
