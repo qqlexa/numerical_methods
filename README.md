@@ -29,8 +29,17 @@
         </li>
      </ul>
   </li>
+  
+  <li>
+    <a href=https://github.com/qqlexa/numerical_methods/tree/master/calculation_work>calculation_work</a>
+    <ul>
+      <li>
+        <a href=https://github.com/qqlexa/numerical_methods/tree/master/calculation_work/nmSite>nmSite</a>
+      </li>
+    </ul>
+  </li>
+  
 </ul>
-
 
 My labs from this subject. Shushura O. M.
 
