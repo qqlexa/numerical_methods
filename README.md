@@ -31,6 +31,15 @@
   </li>
   
   <li>
+    <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab3>lab3</a>
+    <ul>
+      <li>
+        <a href=https://github.com/qqlexa/numerical_methods/blob/master/lab3/lab3.py>lab3.py</a>
+      </li>
+    </ul>
+  </li>
+  
+  <li>
     <a href=https://github.com/qqlexa/numerical_methods/tree/master/calculation_work>calculation_work</a>
     <ul>
       <li>
