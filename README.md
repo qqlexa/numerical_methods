@@ -38,6 +38,15 @@
       </li>
     </ul>
   </li>
+    
+  <li>
+    <a href=https://github.com/qqlexa/numerical_methods/tree/master/lab4>lab4</a>
+    <ul>
+      <li>
+        <a href=https://github.com/qqlexa/numerical_methods/blob/master/lab4/lab4.py>lab4.py</a>
+      </li>
+    </ul>
+  </li>
   
   <li>
     <a href=https://github.com/qqlexa/numerical_methods/tree/master/calculation_work>calculation_work</a>
